@@ -32,13 +32,18 @@ export class RoundHttpComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.graficService.getUsersSocial()
+    /* this.graficService.getUsersSocial()
     .subscribe(data => {
       const labels = Object.keys(data);
       const values = Object.values(data);
 
       this.doughnutChartLabels = labels;
       this.doughnutChartData.push(values);
+    }) */
+
+    this.graficService.getRxjs().subscribe(({labels, values}) => {
+      this.doughnutChartLabels = labels;
+      this.doughnutChartData.push(values)
     })
   }
 
