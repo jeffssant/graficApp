@@ -1,1 +1,21 @@
-<p>round-http works!</p>
+<h1>Most used social media</h1>
+<hr>
+
+<div class="alert alert-info" *ngIf="doughnutChartData.length === 0; else divGrafic">
+  Loading...
+</div>
+
+<div class="row" >
+  <div class="col">
+    <ng-template #divGrafic>
+      <div style="display: block">
+        <canvas baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          [colors]="colors">
+        </canvas>
+      </div>
+  </ng-template>
+  </div>
+</div>
