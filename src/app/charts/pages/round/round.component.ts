@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Color, Label, MultiDataSet } from 'ng2-charts';
+import { ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-round',
@@ -6,11 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class RoundComponent implements OnInit {
+export class RoundComponent {
 
-  constructor() { }
+  public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
 
-  ngOnInit(): void {
-  }
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100]
+  ];
+
+  public doughnutChartType: ChartType = 'doughnut';
+
+  public colors: Color[] = [
+    {
+      backgroundColor: [
+        '#FFBB7A',
+        '#1F20E6',
+        '#61DDFF'
+      ]
+    }
+  ]
+
+
 
 }
